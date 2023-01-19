@@ -10,19 +10,7 @@ function App() {
         </header>
         <ChatList />
       </div>
-        <ChatCreateForm 
-          onSubmit={ (field) => {
-            const resultField ={};
-            Object.keys(field).map(key=>
-              {
-                resultField[key]=field[key]
-              }
-            );
-            resultField["date"]=new Date();
-            return resultField;
-          }
-          }
-        />
+        <ChatCreateForm />
     </div>
   );
 }

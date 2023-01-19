@@ -32,7 +32,7 @@ export default function ChatList(props) {
       type="list"
       isPaginated={true}
       searchPlaceholder="Search..."
-      itemsPerPage={30}
+      itemsPerPage={10}
       direction="column"
       justifyContent="center"
       items={items || []}

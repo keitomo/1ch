@@ -7,10 +7,10 @@
 import * as React from "react";
 import { Chat } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { FlexProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
+import { FlexProps, TextProps } from "@aws-amplify/ui-react";
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type ChatOverridesProps = {
-    Chat?: PrimitiveOverrideProps<ViewProps>;
+    Chat?: PrimitiveOverrideProps<FlexProps>;
     NameFrame?: PrimitiveOverrideProps<FlexProps>;
     "\u540D\u524D"?: PrimitiveOverrideProps<TextProps>;
     DateFrame?: PrimitiveOverrideProps<FlexProps>;
@@ -18,7 +18,7 @@ export declare type ChatOverridesProps = {
     TextFrame?: PrimitiveOverrideProps<FlexProps>;
     "\u30C6\u30AD\u30B9\u30C8"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
-export declare type ChatProps = React.PropsWithChildren<Partial<ViewProps> & {
+export declare type ChatProps = React.PropsWithChildren<Partial<FlexProps> & {
     chat?: Chat;
 } & {
     overrides?: ChatOverridesProps | undefined | null;
