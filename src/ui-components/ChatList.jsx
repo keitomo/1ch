@@ -7,6 +7,7 @@
 /* eslint-disable */
 import * as React from "react";
 import { Chat as Chat0 } from "../models";
+import { SortDirection } from "@aws-amplify/datastore";
 import {
   getOverrideProps,
   useDataStoreBinding,
@@ -15,10 +16,12 @@ import Chat from "./Chat";
 import { Collection } from "@aws-amplify/ui-react";
 export default function ChatList(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
+  const itemsPagination = { sort: (s) => s.createdAt(SortDirection.ASCENDING) };
   const [items, setItems] = React.useState(undefined);
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
     model: Chat0,
+    pagination: itemsPagination,
   }).items;
   React.useEffect(() => {
     if (itemsProp !== undefined) {
